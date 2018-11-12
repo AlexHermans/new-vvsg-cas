@@ -51,7 +51,8 @@ form.register{
   width: 80%;
   margin-right: 3vw
 }
-input{
+input[type='text'],
+input[type='password']{
   background-color: white;
   border: none;
   padding: 1rem;
@@ -188,6 +189,9 @@ label{
   margin-top: 1rem;
   font-size: 0.9rem;
 }
+.aspNetHidden{
+  display: none;
+}
 
 #form-control{
   background-color: #F4F4F7;
@@ -266,6 +270,7 @@ label{
 @media (min-width:750px) {
   body{
     flex-direction: row;
+    overflow: hidden 
   }
   main{
     width: 60%;
@@ -295,7 +300,8 @@ label{
     font-size: 1.1rem;
   }
   input{
-    background-color: #F6F6F6;
+    background-color: #F6F6F6 !important;
+    color: #aaa !important;
   }
 
   .overlay{

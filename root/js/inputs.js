@@ -13,18 +13,18 @@ $(document).ready(function() {
   }
 
   window.addEventListener('change_form', function() {
-    $('input').val('')
+    $('input').not('input[type="submit"]').val('')
     $('.error').slideUp('fast', function(){$(this).detach()})
     $('.login-button').attr('disabled', true).addClass('disabled')
   })
 
-  $('#email, #email_register').on('keyup', function(){
+  $('#MainContent_STSLogin_UserName, #email_register').on('keyup', function(){
     if ($(this).val()){
       inputsCorrect = correctEmail($(this).val())
     }
   })
 
-  $('#email, #email_register').focusout(function(){
+  $('#MainContent_STSLogin_UserName, #email_register').focusout(function(){
     var error_el = $('p.error')
     console.log(inputsCorrect)
     console.log($('p.error').length)
@@ -43,7 +43,7 @@ $(document).ready(function() {
   })
 
   $('.login').on('keyup',function(){
-    if ($('#password').val() && inputsCorrect && $('#email').val()){
+    if ($('#MainContent_STSLogin_Password').val() && inputsCorrect && $('#MainContent_STSLogin_UserName').val()){
       $('.login-button').attr('disabled', false).removeClass('disabled')
     } else {
         $('.login-button').attr('disabled', true).addClass('disabled')
