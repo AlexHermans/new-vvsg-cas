@@ -1,6 +1,11 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>VVSG-inloggen</title>
+  <meta charset="utf-8" />
+  <title>
+    VVSG-inloggen
+  </title>
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
   <script type="text/javascript" src="js/lib/hammer.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
@@ -11,137 +16,168 @@
   <script type="text/javascript" src="js/explainer.js"></script>
 </head>
 <body>
-  <aside>
-    <div class="overlay"></div>
-    <img class="logo" src="img/logo-white.png" alt="VVSG Logo">
-  </aside>
-  <main id='main-pan-enabled'>
-    <nav>
-      <div class="switcher" id="switcher-pan-enabled">
-        <div class="switcher-ball"></div>
-      </div>
-      <ul>
-        <li><a href="#" class="current">Aanmelden</a></li>
-        <li><a href="#">Registreren</a></li>
-      </ul>
-    </nav>
-    <section id="form-control">
-      <section id="aanmelden">
-        <form class="login" action="index.html" method="post">
-          <label for="email">E-mail adres</label>
-          <input type="text" id="email" name="email" value="" placeholder="E-mail adres">
-          <label for="password">Wachtwoord</label>
-          <input type="password" id="password" name="password" value="" placeholder="Wachtwoord">
-          <button class="login-button disabled" type="button" name="login" disabled>Inloggen</button>
-          <a href="#" class="forgot">Wachtwoord vergeten?</a>
-        </form>
-        <div class="explainer-container">
-          <div></div>
-          <p class="explainer">Inloggen met je emailadres en je wachtwoord</p>
-        </div>
-      </section>
-      <section id="registreren">
-        <form class="register" action="index.html" method="post">
-          <label for="naam_register">Naam</label>
-          <input type="text" id="naam_register" name="name_register" value="" placeholder="Voor- en achternaam">
-          <label for="email_register">E-mail adres</label>
-          <input type="text" id="email_register" name="email_register" value="" placeholder="E-mailadres">
-          <label for="password_register">Wachtwoord</label>
-          <input type="password" id="password_register" name="password_register" value="" placeholder="Wachtwoord">
-          <label for="password_repeat_register">Herhaal wachtwoord</label>
-          <input type="password" id="password_repeat_register" name="password_repeat_register" value="" placeholder="Herhaal wachtwoord">
-          <button class="register-button disabled" type="button" name="register" disabled>Registreren</button>
-        </form>
-        <div class="explainer-container">
-          <div></div>
-          <p class="explainer">Inloggen met je emailadres en je wachtwoord</p>
-        </div>
-      </section>
-    </section>
-    <section id="social">
-      <h2>Inloggen met social media</h2>
-      <p>Opgelet: dit gaat enkel indien je al een account op vvsg.be hebt.</p>
-      <ul>
-        <li><a class="facebook" href="#">facebook</a></li>
-        <li><a class="twitter" href="#">twitter</a></li>
-        <li><a class="linkedin" href="#">linkedin</a></li>
-      </ul>
-    </section>
-  </main>
-  <script type="text/javascript">
-
-  // Create custom event to fire during form changing (to clear inputs)
-  var change_form_event = document.createEvent('Event');
-  change_form_event.initEvent('change_form', true, true);
-
-  function handle_register(){
-    window.dispatchEvent(change_form_event)
-    $('.switcher-ball').removeClass('ball-left').addClass('ball-right')
-    $('#form-control section').removeClass('go-right').addClass('go-left');
-    $('#social').hide()
-  }
-
-  function handle_login(){
-    window.dispatchEvent(change_form_event)
-    $('.switcher-ball').removeClass('ball-right').addClass('ball-left')
-    $('#form-control section').removeClass('go-left').addClass('go-right')
-    $('#social').show()
-  }
-
-    $(document).ready(function() {
-      $('nav a').on('click', function(e) {
-        let that = $(this)
-        if (!that.hasClass('current')){
-          that.parent().siblings('li').children('a').removeClass('current')
-          that.addClass('current')
+  <form method="post" action="./login.aspx?ReturnUrl=%2fSTS%2f" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'MainContent_STSLogin_Button1')" id="ctl01">
+    <div class="aspNetHidden">
+      <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+      <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+      <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTkxNzI4Nzc3NGRkkFUghr79tSvWlzI39aVDIWSGq1J8NuFf81gW+MAtGqM=" />
+</div>
+    <script type="text/javascript">
+      //<![CDATA[
+      var theForm = document.forms['ctl01'];
+      if (!theForm) {
+        theForm = document.ctl01;
+      }
+      function __doPostBack(eventTarget, eventArgument) {
+        if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+          theForm.__EVENTTARGET.value = eventTarget;
+          theForm.__EVENTARGUMENT.value = eventArgument;
+          theForm.submit();
         }
-        if (that.prop('innerText').toLowerCase() == 'registreren'){
-          handle_register()
-        } else {
-          handle_login()
-        }
+      }
+      //]]>
+    </script>
+    <script src="/STS/WebResource.axd?d=5vYJO4sjJ-AjbSKaE2GrOdfoNT8DAAiXz0tQZJdC_zSgCqC_o9ZI3EYcOyMJ9TSY28gjWztZnjrg_0aWbeQD09tnTgioVOyrytk3hvGpC_01&amp;t=636531734700000000" type="text/javascript"></script>
+    <div class="aspNetHidden">
+      <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D5E48CA2" />
+      <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAATsy84n3r9pF1MHO2yn0QPevlC0v7/ukgwK6ImBLuJ0GL4alWLlVBI/a2O0VJmuKIy9YKqF1lOG1kpc1iUwvdfJMFfYdaGsZLRr0HqTB6FRP5HYAvjj22Mz1XvSk+dCicU=" />
+    </div>
+          <aside>
+            <div class="overlay"></div>
+            <img class="logo" src="img/logo-white.png" alt="VVSG Logo">
+          </aside>
+          <main id='main-pan-enabled'>
+            <nav>
+              <div class="switcher" id="switcher-pan-enabled">
+                <div class="switcher-ball"></div>
+              </div>
+              <ul>
+                <li><a href="#" class="current">Aanmelden</a></li>
+                <li><a href="#">Registreren</a></li>
+              </ul>
+            </nav>
+            <section id="form-control">
+              <section id="aanmelden">
+                <div class="login" action="index.html" method="post">
+                  <label for="email">E-mail adres</label>
+                  <input name="ctl00$MainContent$STSLogin$UserName" type="text" id="MainContent_STSLogin_UserName" placeholder="E-mail adres" />
+                  <!--input type="text" id="email" name="email" value="" placeholder="E-mail adres"-->
+                  <label for="password">Wachtwoord</label>
+                  <input name="ctl00$MainContent$STSLogin$Password" type="password" id="MainContent_STSLogin_Password" placeholder="Wachtwoord" />
+                  <!--input type="password" id="password" name="password" value="" placeholder="Wachtwoord"-->
+                  <input type="submit" name="ctl00$MainContent$STSLogin$Button1" value="Inloggen" id="MainContent_STSLogin_Button1" class="login-button disabled" disabled="" />
+                  <!--button class="login-button disabled" type="button" name="login" disabled>Inloggen</!--button-->
+                  <a href="#" class="forgot">Wachtwoord vergeten?</a>
+                </div>
+                <div class="explainer-container">
+                  <div></div>
+                  <p class="explainer">Inloggen met je emailadres en je wachtwoord</p>
+                </div>
+              </section>
+              <section id="registreren">
+                <div class="register">
+                  <label for="naam_register">Naam</label>
+                  <input type="text" id="naam_register" name="name_register" value="" placeholder="Voor- en achternaam">
+                  <label for="email_register">E-mail adres</label>
+                  <input type="text" id="email_register" name="email_register" value="" placeholder="E-mailadres">
+                  <label for="password_register">Wachtwoord</label>
+                  <input type="password" id="password_register" name="password_register" value="" placeholder="Wachtwoord">
+                  <label for="password_repeat_register">Herhaal wachtwoord</label>
+                  <input type="password" id="password_repeat_register" name="password_repeat_register" value="" placeholder="Herhaal wachtwoord">
+                  <button class="register-button disabled" type="button" name="register" disabled>Registreren</button>
+                </div>
+                <div class="explainer-container">
+                  <div></div>
+                  <p class="explainer">Inloggen met je emailadres en je wachtwoord</p>
+                </div>
+              </section>
+            </section>
+            <section id="social">
+              <h2>Inloggen met social media</h2>
+              <p>Opgelet: dit gaat enkel indien je al een account op vvsg.be hebt.</p>
+              <ul>
+                <li><a class="facebook" href="#">facebook</a></li>
+                <li><a class="twitter" href="#">twitter</a></li>
+                <li><a class="linkedin" href="#">linkedin</a></li>
+              </ul>
+            </section>
+          </main>
+    <script type="text/javascript">
+      // Create custom event to fire during form changing (to clear inputs)
+      var change_form_event = document.createEvent('Event');
+      change_form_event.initEvent('change_form', true, true);
+
+      function handle_register() {
+        window.dispatchEvent(change_form_event)
+        $('.switcher-ball').removeClass('ball-left').addClass('ball-right')
+        $('#form-control section').removeClass('go-right').addClass('go-left');
+        $('#social').hide()
+      }
+
+      function handle_login() {
+        window.dispatchEvent(change_form_event)
+        $('.switcher-ball').removeClass('ball-right').addClass('ball-left')
+        $('#form-control section').removeClass('go-left').addClass('go-right')
+        $('#social').show()
+      }
+
+      $(document).ready(function() {
+        $('nav a').on('click', function(e) {
+          let that = $(this)
+          if (!that.hasClass('current')) {
+            that.parent().siblings('li').children('a').removeClass('current')
+            that.addClass('current')
+          }
+          if (that.prop('innerText').toLowerCase() == 'registreren') {
+            handle_register()
+          } else {
+            handle_login()
+          }
+        })
       })
-    })
-  </script>
-  <script type="text/javascript">
-    window.addEventListener('touchstart', function onFirstTouch(){
+    </script>
+    <script type="text/javascript">
+      window.addEventListener('touchstart', function onFirstTouch() {
         window.USER_IS_TOUCHING = true;
 
         window.removeEventListener('touchstart', onFirstTouch, false)
-    }, false)
+      }, false)
 
       var main = new Hammer(document.getElementById('main-pan-enabled'));
       var switcher = new Hammer(document.getElementById('switcher-pan-enabled'))
 
-      main.get('pan').set({direction: Hammer.DIRECTION_HORIZONTAL});
+      main.get('pan').set({
+        direction: Hammer.DIRECTION_HORIZONTAL
+      });
 
-      main.on('swipeleft', function(e){
-        if(window.USER_IS_TOUCHING){
+      main.on('swipeleft', function(e) {
+        if (window.USER_IS_TOUCHING) {
           handle_register();
           console.log('main_swipe_left')
         }
       })
 
-      main.on('swiperight', function(e){
-        if(window.USER_IS_TOUCHING){
+      main.on('swiperight', function(e) {
+        if (window.USER_IS_TOUCHING) {
           handle_login();
           console.log('main_swipe_right')
         }
       })
 
-      switcher.on('panleft', function(e){
-        if(window.USER_IS_TOUCHING){
+      switcher.on('panleft', function(e) {
+        if (window.USER_IS_TOUCHING) {
           handle_login();
           console.log('switch_pan_left')
         }
       })
 
-      switcher.on('panright', function(e){
-        if(window.USER_IS_TOUCHING){
+      switcher.on('panright', function(e) {
+        if (window.USER_IS_TOUCHING) {
           handle_register();
           console.log('switch_pan_right')
         }
       })
-
-  </script>
+    </script>
+  </form>
 </body>
+</html>
