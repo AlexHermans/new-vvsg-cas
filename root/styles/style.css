@@ -31,12 +31,6 @@ aside {
    flex-direction: column;
    overflow-x: hidden;
  }
-#ctl01{
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
 nav{
   padding-bottom: 2vw;
   display: flex;
@@ -198,6 +192,30 @@ label{
 .aspNetHidden{
   display: none;
 }
+.main-content{
+  margin-left: 5vw;
+  margin-top: 15vh;
+  max-width: 80%;
+  overflow: hidden;
+}
+.main-content h1{
+  color: #BBD032;
+  font-weight: 700;
+  font-size: 150%;
+  margin-bottom: 5vh;
+}
+.main-content p{
+  margin-bottom: 3vh;
+  line-height: 135%;
+}
+.main-content strong{
+  font-weight: 700;
+}
+.main-content a{
+  font-weight: 400;
+  text-decoration: underline;
+  color: #BBD032;
+}
 
 #form-control{
   background-color: #F4F4F7;
@@ -239,6 +257,12 @@ label{
   height: 15vw;
   display: flex;
   margin-top: 5vw;
+}
+#ctl01{
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* CSS3 Anims */
@@ -380,6 +404,9 @@ label{
     margin-top: 0.3rem;
     font-size: 1rem;
     font-weight: 400;
+  }
+  .main-content{
+    margin-top: 25vh;
   }
 
   #ctl01{
