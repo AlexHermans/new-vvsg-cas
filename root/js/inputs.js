@@ -12,6 +12,10 @@ $(document).ready(function() {
     }
   }
 
+  function throwError(errorText){
+      $('p.error').text(errorText).slideDown()
+  }
+
   window.addEventListener('change_form', function() {
     $('input').not('input[type="submit"]').val('')
     $('.error').slideUp('fast', function(){$(this).text(' ')})
@@ -31,7 +35,7 @@ $(document).ready(function() {
 
     if (!inputsCorrect && !$('p.error').text() == ' ' && $(this).val()){
       console.log('error')
-      $('p.error').text('Dit lijkt geen correct e-mailadres te zijn.').slideDown()
+      throwError('Dit lijkt geen correct e-mail adres te zijn')
 
     } else if (inputsCorrect && $(this).val()) {
       error_el.slideUp(400, function(){$(this).text(' ')})
