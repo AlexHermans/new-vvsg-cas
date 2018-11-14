@@ -14,7 +14,7 @@ $(document).ready(function() {
 
   window.addEventListener('change_form', function() {
     $('input').not('input[type="submit"]').val('')
-    $('.error').slideUp('fast', function(){$(this).detach()})
+    $('.error').slideUp('fast', function(){$(this).text(' ')})
     $('.login-button').attr('disabled', true).addClass('disabled')
   })
 
@@ -29,16 +29,14 @@ $(document).ready(function() {
     console.log(inputsCorrect)
     console.log($('p.error').length)
 
-    if (!inputsCorrect && !$('p.error').length && $(this).val()){
+    if (!inputsCorrect && !$('p.error').text() == ' ' && $(this).val()){
       console.log('error')
-      var error = '<p class="error" style="display:none">Dit lijkt geen correct e-mail adres te zijn.</p>'
-      $(this).before(error)
-       $('p.error').slideDown()
+      $('p.error').text('Dit lijkt geen correct e-mailadres te zijn.').slideDown()
 
     } else if (inputsCorrect && $(this).val()) {
-      error_el.slideUp(400, function(){$(this).detach()})
+      error_el.slideUp(400, function(){$(this).text(' ')})
     } else if (!$(this).val()){
-      error_el.slideUp(400, function(){$(this).detach()})
+      error_el.slideUp(400, function(){$(this).text(' ')})
     }
   })
 

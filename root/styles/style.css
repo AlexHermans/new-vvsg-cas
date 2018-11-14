@@ -129,6 +129,7 @@ label{
   color: red;
   padding: 10px;
   margin: 10px 0 0;
+  display: none;
 }
 .facebook{
   background-image: url(../img/facebook.png);
